@@ -6,17 +6,21 @@
     <title>{{ meta.title }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+    {% include "meta.njk" %}
 </head>
 <body>
-    <div id="icon-sprite" hidden>{% iconsprite %}</div>
+    <div hidden>{% iconsprite %}</div>
+    <a href="#main" class="sr-skip-link">skip to main content</a>
 
-    {% include "header.njk" %}
-    <main id="main" tabindex="-1">
-        {{ content | safe }}
-    </main>
-    {% include "footer.njk" %}
+    <div class="layout" role="document">
+        {% include "header.njk" %}
+        <main id="main" tabindex="-1">
+            {{ content | safe }}
+        </main>
+        {% include "footer.njk" %}
+    </div>
 
-    <script type="text/javascript" src="/assets/scripts/main.js"></script>
+    <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
     <!--! LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
 </body>
 </html>
