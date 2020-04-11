@@ -32,13 +32,15 @@ module.exports = function (config) {
     config.addWatchTarget('./src/assets')
 
     // Markdown
-    const mdlib = markdownIt({
-        html: true,
-        breaks: true,
-        linkify: true,
-        typographer: true
-    })
-    config.setLibrary('md', mdlib)
+    config.setLibrary(
+        'md',
+        markdownIt({
+            html: true,
+            breaks: true,
+            linkify: true,
+            typographer: true
+        })
+    )
 
     // Layouts
     config.addLayoutAlias('base', 'base.njk')
@@ -64,7 +66,6 @@ module.exports = function (config) {
         },
         templateFormats: ['njk', 'md', '11ty.js'],
         htmlTemplateEngine: 'njk',
-        markdownTemplateEngine: 'njk',
-        passthroughFileCopy: true
+        markdownTemplateEngine: 'njk'
     }
 }
