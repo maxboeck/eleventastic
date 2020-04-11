@@ -5,6 +5,20 @@
 [context.production.environment]
     ELEVENTY_ENV = "production"
 
+[[headers]]
+    for = "/*"
+    [headers.values]
+        X-Frame-Options = "DENY"
+        X-XSS-Protection = "1; mode=block"
+        X-Content-Type-Options = "nosniff"
+        Referrer-Policy= "no-referrer-when-downgrade"
+
+# [[redirects]]
+#     from = "https://eleventykit.netlify.com/*"
+#     to = "https://eleventykit.dev/:splat"
+#     status = 301
+#     force = true
+
 [[redirects]]
     from = "*"
     to = "/404"
