@@ -24,6 +24,9 @@ module.exports = function (config) {
     // Icon Sprite
     config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
 
+    // Asset Watch Targets
+    config.addWatchTarget('./src/assets')
+
     // Markdown
     const mdlib = markdownIt({
         html: true,
