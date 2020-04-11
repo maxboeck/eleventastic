@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ meta.title }}</title>
+
+    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+</head>
+<body>
+    <div id="icon-sprite" hidden>{% iconsprite %}</div>
+
+    {% include "header.njk" %}
+    <main id="main" tabindex="-1">
+        {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+
+    <!--! LAST BUILD: {{ build.env}} {{ build.timestamp | dateToISO }} -->
+</body>
+</html>

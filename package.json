@@ -1,0 +1,34 @@
+{
+  "name": "eleventy-kit",
+  "version": "1.0.0",
+  "description": "A boilerplate for eleventy websites",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "build": "npm run clean && cross-env ELEVENTY_ENV=production eleventy",
+    "clean": "del-cli dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/maxboeck/eleventy-kit"
+  },
+  "author": "Max Böck",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "cssnano": "^4.1.10",
+    "del-cli": "^3.0.0",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.23.0",
+    "markdown-it": "^10.0.0",
+    "postcss": "^7.0.27",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.3",
+    "precss": "^4.0.0",
+    "svg-sprite": "^1.5.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
+}
