@@ -1,0 +1,92 @@
+//--------------------
+// SCSS VARIABLES
+//--------------------
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$breakpoints: (
+    md: 670px,
+    lg: 940px,
+    xl: 1260px
+);
+
+$container-max-width: 1200px;
+$container-narrow-max-width: 41rem;
+
+// Z-Index Stack
+//
+// Control the order of layers in the application
+$z-layers: (
+    'modal': 999,
+    'nav': 100,
+    'content-overlay': 30
+);
+
+// Colors
+//
+// Grayscale.
+
+$gray-darkest: #373a3c;
+$gray-dark: #55595c;
+$gray: #818a91;
+$gray-light: #eceeef;
+$gray-lightest: #f7f7f9;
+
+// Brand Colors
+
+$brand-red: #fc6767;
+$brand-cyan: #43a9a3;
+$simpleloop-brand-primary: #26ffae;
+$twitter-brand-primary: #1da1f2;
+
+// Color Mappings
+
+$bg-color: #fff;
+$bg-color-semitransparent: rgba(255, 255, 255, 0.85);
+$bg-color-secondary: $gray-lightest;
+$text-color: $gray-darkest;
+$text-color-secondary: $gray;
+$border-color: $gray-light;
+$brand-color-primary: $brand-red;
+$brand-color-primary-offset: darken($brand-red, 6%);
+$brand-color-secondary: $brand-cyan;
+$header-border-color: $gray-darkest;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family-serif: 'Times New Roman', Georgia, Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Andale Mono', 'Courier New',
+    monospace;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-root: 100%;
+$font-size-base: 1rem;
+$line-height: 1.625;
+
+// Animation
+//
+// Default easing curves, Transitions, etc
+
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+$animation-curve-default: $animation-curve-fast-out-slow-in;
+
+// Misc Shared
+//
+// common shared styles
+
+$border-radius: 0.25rem;
+$spacing-x: 2rem;
+$spacing-y: 2rem;
+
+$box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+$box-shadow-elevated: 0 6px 12px 0 rgba(0, 0, 0, 0.1);

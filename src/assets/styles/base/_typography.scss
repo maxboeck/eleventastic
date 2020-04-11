@@ -1,0 +1,34 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+h2 {
+    font-size: 2.125rem;
+    font-weight: 700;
+}
+
+p {
+    margin: 0;
+}
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @include mq(md) {
+        font-size: 2rem;
+    }
+}
