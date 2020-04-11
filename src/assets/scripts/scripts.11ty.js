@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const MemoryFileSystem = require('memory-fs')
 
 const fileName = 'main.js'
+const isProd = process.env.ELEVENTY_ENV === 'production'
 const mfs = new MemoryFileSystem()
 
 module.exports = class {
@@ -20,7 +21,7 @@ module.exports = class {
             }
         }
         const webpackConfig = {
-            mode: 'production',
+            mode: isProd ? 'production' : 'development',
             entry: rawFilepath,
             output: {
                 path: path.resolve(__dirname, '../../memory-fs/js/')
