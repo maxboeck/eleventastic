@@ -12,6 +12,7 @@ module.exports = class {
         const filePath = path.join(__dirname, `/${fileName}`)
         return {
             permalink: `/assets/styles/main.css`,
+            eleventyExcludeFromCollections: true,
             filePath
         }
     }
