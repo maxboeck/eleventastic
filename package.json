@@ -1,5 +1,5 @@
 {
-  "name": "eleventy-kit",
+  "name": "eleventastic",
   "version": "1.0.0",
   "description": "A boilerplate for eleventy websites",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/maxboeck/eleventy-kit"
+    "url": "http://github.com/maxboeck/eleventastic"
   },
   "author": "Max Böck",
   "license": "MIT",

@@ -1,3 +1,3 @@
-# Eleventy Kit
+# Eleventastic
 
-A new eleventy project.
+A boilerplate for eleventy websites
