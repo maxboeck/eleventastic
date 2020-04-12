@@ -1,3 +1,3 @@
 # Eleventastic
 
-A boilerplate for eleventy websites
+An Eleventy Starter Kit.
