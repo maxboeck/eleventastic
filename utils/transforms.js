@@ -1,7 +1,5 @@
 const htmlmin = require('html-minifier')
 const critical = require('critical')
-process.setMaxListeners(Infinity)
-
 const buildDir = 'dist'
 
 const shouldTransformHTML = (outputPath) =>
@@ -11,6 +9,7 @@ const shouldTransformHTML = (outputPath) =>
 
 const isHomePage = (outputPath) => outputPath === `${buildDir}/index.html`
 
+process.setMaxListeners(Infinity)
 module.exports = {
     htmlmin: function (content, outputPath) {
         if (shouldTransformHTML(outputPath)) {
@@ -25,16 +24,20 @@ module.exports = {
 
     critical: async function (content, outputPath) {
         if (shouldTransformHTML(outputPath) && isHomePage(outputPath)) {
-            const config = {
-                base: `${buildDir}/`,
-                html: content,
-                inline: true,
-                width: 1280,
-                height: 800,
-                timeout: 30000
+            try {
+                const config = {
+                    base: `${buildDir}/`,
+                    html: content,
+                    inline: true,
+                    width: 1280,
+                    height: 800,
+                    timeout: 30000
+                }
+                const html = await critical.generate(config)
+                return html
+            } catch (err) {
+                console.error(err)
             }
-            const html = await critical.generate(config)
-            return html
         }
         return content
     }
