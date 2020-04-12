@@ -29,7 +29,6 @@ module.exports = {
                 base: `${buildDir}/`,
                 html: content,
                 inline: true,
-                minify: true,
                 width: 1280,
                 height: 800,
                 timeout: 30000
