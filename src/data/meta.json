@@ -1,3 +1,7 @@
 {
-    "title": "Eleventastic"
+    "title": "Eleventastic",
+    "description": "An Eleventy Starter Kit",
+    "url": "https://mxb.dev",
+    "lang": "en",
+    "locale": "en_us"
 }

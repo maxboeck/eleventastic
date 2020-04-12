@@ -1,3 +1,20 @@
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
+
+{# General #}
+<meta name="description" content="{{ description or meta.description }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
+
+{# Open Graph #}
+<meta property="og:site_name" content="{{ meta.title }}">
+<meta property="og:title" content="{{ title or meta.title }}">
+<meta property="og:description" content="{{ description  or meta.description }}">
+<meta property="og:url" content="{{ absolutePageUrl }}">
+<meta property="og:locale" content="{{ meta.locale }}">
+<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
+{%- if image -%}
+    <meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
+{%- endif -%}
+
 {# Favicon #}
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon/apple-touch-icon.png' | url }}">
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
@@ -7,4 +24,4 @@
 <meta name="theme-color" content="#1a1a1a">
 
 {# RSS Feed #}
-<link type="application/atom+xml" rel="alternate" href="{{ site.url }}/feed.xml" title="{{ site.title }}">
+<link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.title }}">
