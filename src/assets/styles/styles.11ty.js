@@ -4,8 +4,10 @@ const sass = require('node-sass')
 const CleanCSS = require('clean-css')
 const cssesc = require('cssesc')
 
-const fileName = 'main.scss'
 const isProd = process.env.ELEVENTY_ENV === 'production'
+
+// main entry point name
+const fileName = 'main.scss'
 
 module.exports = class {
     async data() {
@@ -17,6 +19,8 @@ module.exports = class {
         }
     }
 
+    // Compile Sass to CSS,
+    // Embed Source Map in Development
     async compile(config) {
         return new Promise((resolve, reject) => {
             if (!isProd) {
@@ -33,6 +37,7 @@ module.exports = class {
         })
     }
 
+    // Minify & Optimize with CleanCSS in Production
     async minify(css) {
         return new Promise((resolve, reject) => {
             if (!isProd) {
@@ -46,6 +51,9 @@ module.exports = class {
         })
     }
 
+    // display an error overlay when CSS build fails.
+    // this brilliant idea is taken from Mike Riethmuller / Supermaya
+    // @see https://github.com/MadeByMike/supermaya/blob/master/site/utils/compile-scss.js
     renderError(error) {
         return `
         /* Error compiling stylesheet */
@@ -88,15 +96,19 @@ module.exports = class {
         }`
     }
 
+    // render the CSS file
     async render({ filePath }) {
         try {
             const css = await this.compile({ file: filePath })
-            const minified = await this.minify(css)
-            return minified
+            const result = await this.minify(css)
+            return result
         } catch (err) {
+            // if things go wrong
             if (isProd) {
+                // throw and abort in production
                 throw new Error(err)
             } else {
+                // otherwise display the error overly
                 console.error(err)
                 const msg = err.formatted || err.message
                 return this.renderError(msg)

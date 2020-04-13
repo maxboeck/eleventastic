@@ -3,14 +3,19 @@ const path = require('path')
 const webpack = require('webpack')
 const MemoryFileSystem = require('memory-fs')
 
-const fileName = 'main.js'
 const isProd = process.env.ELEVENTY_ENV === 'production'
 const mfs = new MemoryFileSystem()
 
+// main entry point name
+const fileName = 'main.js'
+
 module.exports = class {
+    // Configure Webpack in Here
     async data() {
-        const rawFilepath = path.join(__dirname, `/${fileName}`)
-        const jsRule = {
+        const filePath = path.join(__dirname, `/${fileName}`)
+
+        // Transform .js files, run through Babel
+        const js = {
             test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
@@ -20,14 +25,16 @@ module.exports = class {
                 }
             }
         }
+
+        // Main Config
         const webpackConfig = {
             mode: isProd ? 'production' : 'development',
-            entry: rawFilepath,
+            entry: filePath,
             output: {
                 path: path.resolve(__dirname, '../../memory-fs/js/')
             },
             module: {
-                rules: [jsRule]
+                rules: [js]
             }
         }
 
@@ -38,6 +45,9 @@ module.exports = class {
         }
     }
 
+    // Compile JS with Webpack, write the result to Memory Filesystem.
+    // this brilliant idea is taken from Mike Riethmuller / Supermaya
+    // @see https://github.com/MadeByMike/supermaya/blob/master/site/utils/compile-webpack.js
     compile(webpackConfig) {
         const compiler = webpack(webpackConfig)
         compiler.outputFileSystem = mfs
@@ -63,6 +73,7 @@ module.exports = class {
         })
     }
 
+    // render the JS file
     async render({ webpackConfig }) {
         try {
             const result = await this.compile(webpackConfig)
