@@ -8,6 +8,9 @@ eleventyExcludeFromCollections: true
     <subtitle>{{ meta.description }}</subtitle>
     <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
     <link href="{{ site.url }}" rel="alternate" type="text/html"/>
+    <author>
+        <name>{{ meta.title }}</name>
+    </author>
     {% if collections.posts %}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
     {% endif %}
