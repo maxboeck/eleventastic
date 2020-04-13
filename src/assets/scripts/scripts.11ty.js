@@ -7,39 +7,44 @@ const isProd = process.env.ELEVENTY_ENV === 'production'
 const mfs = new MemoryFileSystem()
 
 // main entry point name
-const fileName = 'main.js'
+const ENTRY_FILE_NAME = 'main.js'
 
 module.exports = class {
     // Configure Webpack in Here
     async data() {
-        const filePath = path.join(__dirname, `/${fileName}`)
+        const entryPath = path.join(__dirname, `/${ENTRY_FILE_NAME}`)
+        const outputPath = path.resolve(__dirname, '../../memory-fs/js/')
 
         // Transform .js files, run through Babel
-        const js = {
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env']
+        const rules = [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
             }
-        }
+        ]
+
+        // pass environment down to scripts
+        const envPlugin = new webpack.EnvironmentPlugin({
+            ELEVENTY_ENV: process.env.ELEVENTY_ENV
+        })
 
         // Main Config
         const webpackConfig = {
             mode: isProd ? 'production' : 'development',
-            entry: filePath,
-            output: {
-                path: path.resolve(__dirname, '../../memory-fs/js/')
-            },
-            module: {
-                rules: [js]
-            }
+            entry: entryPath,
+            output: { path: outputPath },
+            module: { rules },
+            plugins: [envPlugin]
         }
 
         return {
-            permalink: `/assets/scripts/${fileName}`,
+            permalink: `/assets/scripts/${ENTRY_FILE_NAME}`,
             eleventyExcludeFromCollections: true,
             webpackConfig
         }
@@ -66,7 +71,7 @@ module.exports = class {
                 }
 
                 const { assets } = stats.compilation
-                const file = assets[fileName].source()
+                const file = assets[ENTRY_FILE_NAME].source()
 
                 resolve(file)
             })

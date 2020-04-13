@@ -7,15 +7,15 @@ const cssesc = require('cssesc')
 const isProd = process.env.ELEVENTY_ENV === 'production'
 
 // main entry point name
-const fileName = 'main.scss'
+const ENTRY_FILE_NAME = 'main.scss'
 
 module.exports = class {
     async data() {
-        const filePath = path.join(__dirname, `/${fileName}`)
+        const entryPath = path.join(__dirname, `/${ENTRY_FILE_NAME}`)
         return {
             permalink: `/assets/styles/main.css`,
             eleventyExcludeFromCollections: true,
-            filePath
+            entryPath
         }
     }
 
@@ -97,9 +97,9 @@ module.exports = class {
     }
 
     // render the CSS file
-    async render({ filePath }) {
+    async render({ entryPath }) {
         try {
-            const css = await this.compile({ file: filePath })
+            const css = await this.compile({ file: entryPath })
             const result = await this.minify(css)
             return result
         } catch (err) {
