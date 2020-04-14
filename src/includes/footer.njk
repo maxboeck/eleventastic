@@ -1,5 +1,10 @@
 <footer class="footer" role="contentinfo">
     <div class="container">
-        &copy; copyright {{ build.timestamp | dateToFormat('yyyy') }} &nbsp; {% icon "github" %}
+        <span>&copy; copyright {{ build.timestamp | dateToFormat('yyyy') }}</span>
+        <span> | </span>
+        <a href="http://github.com/maxboeck/eleventastic">
+            <span class="sr-only">View on Github</span>
+            {% icon "github" %}
+        </a>
     </div>
 </footer>
