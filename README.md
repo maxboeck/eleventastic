@@ -1,6 +1,8 @@
 # Eleventastic
 
-A simple Eleventy Starter Kit, my base for all new 11ty projects.
+A simple Eleventy Starter Kit, my base for all new 11ty projects. ([Demo Site](https://eleventastic.netlify.com))
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f78ec52d-8328-4e40-b6da-a0f9164e80d1/deploy-status)](https://app.netlify.com/sites/eleventastic/deploys)
 
 ## Features
 
