@@ -231,12 +231,3 @@ input[type='search'] {
     // https://github.com/twbs/bootstrap/issues/11586.
     -webkit-appearance: none;
 }
-
-::selection {
-    background: $brand-color-secondary;
-    color: #fff;
-}
-::-moz-selection {
-    background: $brand-color-secondary;
-    color: #fff;
-}

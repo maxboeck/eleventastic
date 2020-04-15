@@ -14,7 +14,6 @@ $breakpoints: (
 );
 
 $container-max-width: 1200px;
-$container-narrow-max-width: 41rem;
 
 // Z-Index Stack
 //
@@ -38,22 +37,13 @@ $gray-lightest: #f7f7f9;
 // Brand Colors
 
 $brand-red: #fc6767;
-$brand-cyan: #43a9a3;
-$simpleloop-brand-primary: #26ffae;
-$twitter-brand-primary: #1da1f2;
 
 // Color Mappings
 
 $bg-color: #fff;
-$bg-color-semitransparent: rgba(255, 255, 255, 0.85);
-$bg-color-secondary: $gray-lightest;
 $text-color: $gray-darkest;
-$text-color-secondary: $gray;
-$border-color: $gray-light;
 $brand-color-primary: $brand-red;
 $brand-color-primary-offset: darken($brand-red, 6%);
-$brand-color-secondary: $brand-cyan;
-$header-border-color: $gray-darkest;
 
 // Typography
 //
@@ -84,9 +74,10 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 //
 // common shared styles
 
-$border-radius: 0.25rem;
 $spacing-x: 2rem;
 $spacing-y: 2rem;
 
 $box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
 $box-shadow-elevated: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
+
+$border-radius: 0.25rem;

@@ -1,15 +1,4 @@
 .footer {
     font-size: 0.875rem;
-    padding: 2rem 0;
-    border-top: 1px solid $gray-light;
-
-    &__inner {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    &__item {
-        padding-right: 2rem;
-    }
+    padding: $spacing-y 0;
 }
