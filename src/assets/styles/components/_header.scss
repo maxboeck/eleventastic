@@ -1,3 +1,9 @@
 .header {
     padding: $spacing-y 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

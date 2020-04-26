@@ -1,4 +1,5 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
+const pluginNavigation = require('@11ty/eleventy-navigation')
 const markdownIt = require('markdown-it')
 
 const filters = require('./utils/filters.js')
@@ -9,6 +10,7 @@ const iconsprite = require('./utils/iconsprite.js')
 module.exports = function (config) {
     // Plugins
     config.addPlugin(pluginRss)
+    config.addPlugin(pluginNavigation)
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
