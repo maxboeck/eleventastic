@@ -6,8 +6,8 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ meta.title }}</title>
     <subtitle>{{ meta.description }}</subtitle>
-    <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
-    <link href="{{ site.url }}" rel="alternate" type="text/html"/>
+    <link href="{{ meta.url }}/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="{{ meta.url }}" rel="alternate" type="text/html"/>
     <author>
         <name>{{ meta.title }}</name>
     </author>
