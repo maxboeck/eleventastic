@@ -22,6 +22,7 @@
     "@11ty/eleventy-navigation": "^0.1.5",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
     "clean-css": "^4.2.3",
