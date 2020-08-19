@@ -5,15 +5,15 @@
     <div class="footer__inner container">
         <nav>
           <ul class="nav__menu--pages">
-            <li class="nav__item">
-              <a class="nav__link" href="/contact/">Contact</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Imprint</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#">Privacy</a>
-            </li>
+            {%- for item in collections.sub | eleventyNavigation -%}
+                {%- set isCurrent = (item.url == page.url) -%}
+                {%- set isParent = item.url != '/' and item.url in page.url -%}
+                <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+                    <a class="nav__link" href="{{ item.url | url }}"{% if isCurrent %}aria-current="page"{% endif %}>
+                        {{ item.title }}
+                    </a>
+                </li>
+            {%- endfor -%}
           </ul>
         </nav>
         <ul class="contact__social">

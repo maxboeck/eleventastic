@@ -6,6 +6,12 @@
       margin-top: $spacing-xl*2;
     }
 
+    nav {
+      .nav__item--active a {
+        @extend a:hover;
+      }
+    }
+
     &__inner {
         display: flex;
         justify-content: space-between;
