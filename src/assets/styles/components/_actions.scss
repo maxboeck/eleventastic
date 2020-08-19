@@ -1,0 +1,35 @@
+.actions {
+  margin-top: $spacing-m;
+  // margin-bottom: $spacing-l;
+
+  @include mq(lg) {
+    margin-top: $spacing-l;
+    // margin-bottom: $spacing-xl;
+  }
+
+  a,
+  .cta {
+    margin: $spacing-m $spacing-s;
+  }
+
+  // p {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //
+  //   @media screen and (max-width: 449px) {
+  //     a {
+  //       margin-bottom: $spacing-m;
+  //     }
+  //   }
+  //
+  //   @media screen and (min-width: 450px) {
+  //     flex-direction: row;
+  //
+  //     a,
+  //     .cta {
+  //       margin-right: $spacing-m;
+  //     }
+  //   }
+  // }
+}

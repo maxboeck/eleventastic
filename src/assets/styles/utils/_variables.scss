@@ -8,12 +8,14 @@
 // adapting to different screen sizes, for use in media queries.
 
 $breakpoints: (
-    md: 670px,
-    lg: 940px,
+    // md: 670px,
+    md: 768px,
+    // lg: 940px,
+    lg: 1024px,
     xl: 1260px
 );
 
-$container-max-width: 1200px;
+$container-max-width: 1400px;
 
 // Z-Index Stack
 //
@@ -28,33 +30,31 @@ $z-layers: (
 //
 // Grayscale.
 
-$gray-darkest: #373a3c;
-$gray-dark: #55595c;
-$gray: #818a91;
-$gray-light: #eceeef;
-$gray-lightest: #f7f7f9;
+$gray-dark: #333;
+$gray-light: #EEE;
 
 // Brand Colors
 
-$brand-red: #fc6767;
+$brand-gold: #FFCB52;
+$brand-gold-light: lighten($brand-gold, 26%);
+$brand-blue: #91D0FF;
+$brand-blue-light: lighten($brand-blue, 18%);
+$brand-green: #6BFFC5;
+$brand-purple: #6538FF;
+$brand-pink: #D138FF;
 
 // Color Mappings
 
 $bg-color: #fff;
-$text-color: $gray-darkest;
-$brand-color-primary: $brand-red;
-$brand-color-primary-offset: darken($brand-red, 6%);
+$text-color: $gray-dark;
+$brand-color-primary: $brand-gold;
+$brand-color-primary-offset: darken($brand-gold, 20%);
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$font-family-serif: 'Times New Roman', Georgia, Times, serif;
-$font-family-monospace: Menlo, Monaco, Consolas, 'Andale Mono', 'Courier New',
-    monospace;
+$font-family-sans-serif: 'Nunito', 'Arial round', sans-serif;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-root: 100%;
@@ -74,10 +74,12 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 //
 // common shared styles
 
-$spacing-x: 2rem;
-$spacing-y: 2rem;
+$spacing-s: 0.75rem;
+$spacing-m: 1rem;
+$spacing-l: 2rem;
+$spacing-xl: 3rem;
 
 $box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
 $box-shadow-elevated: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
 
-$border-radius: 0.25rem;
+$border: 3px dashed $gray-dark;

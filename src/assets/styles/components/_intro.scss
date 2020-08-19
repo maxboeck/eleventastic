@@ -1,0 +1,32 @@
+.intro {
+  padding-top: $spacing-m;
+  padding-right: 5%;
+  padding-left: 5%;
+  text-align: center;
+
+  &::after {
+    display: block;
+    content: '';
+    width: 100px;
+    border-bottom: 3px solid $gray-dark;
+    margin-top: $spacing-l;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include mq(lg) {
+    padding-top: $spacing-l;
+  }
+
+  h2,
+  p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+}

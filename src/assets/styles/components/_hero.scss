@@ -1,0 +1,117 @@
+.hero {
+  text-align: center;
+  background-image: url('/assets/images/hero-bg.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  h1 {
+    margin: $spacing-xl auto;
+    max-width: 900px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  img {
+    background-color: white;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    border: $border;
+    border-radius: 10px;
+  }
+}
+
+.hero__horizontal {
+  margin-top: $spacing-m;
+  margin-right: auto;
+  margin-bottom: $spacing-m;
+  margin-left: auto;
+  text-align: center;
+
+  p {
+    margin-top: $spacing-m;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  @include mq-down(md) {
+    img {
+      margin-bottom: $spacing-l;
+      // max-width: 60%;
+    }
+  }
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: $spacing-l;
+    margin-bottom: $spacing-l;
+
+    &--inner {
+      max-width: 48.333%;
+      margin-right: 1.666%;
+    }
+
+    img {
+      max-width: 48.333%;
+      margin-left: 1.666%;
+      background-color: white;
+    }
+  }
+
+  @include mq(lg) {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.hero__text {
+  margin-top: $spacing-m;
+  margin-right: auto;
+  margin-bottom: $spacing-m;
+  margin-left: auto;
+
+  p {
+    margin-top: $spacing-m;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  &--logos {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    img {
+      margin-top: $spacing-l;
+
+      @include mq-down(md) {
+        margin-right: $spacing-l;
+      }
+    }
+
+    @include mq(md) {
+      flex-flow: column;
+    }
+  }
+
+  @include mq(md) {
+    display: flex;
+    align-items: flex-end;
+    margin-top: $spacing-l;
+    margin-bottom: $spacing-l;
+
+    &--inner {
+      max-width: 60%;
+      margin-right: 6.666%;
+    }
+  }
+
+  @include mq(lg) {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl;
+  }
+}

@@ -1,0 +1,53 @@
+.accordion {
+  margin-top: $spacing-xl;
+  padding-top: $spacing-xl;
+  padding-right: 5%;
+  padding-bottom: $spacing-l;
+  padding-left: 5%;
+  background-color: $brand-blue-light;
+  border-radius: 10px;
+
+  @include mq(lg) {
+    margin-top: $spacing-xl*2;
+    padding-top: $spacing-xl*2;
+    padding-bottom: $spacing-xl*2;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-l;
+  }
+
+  h2,
+  p,
+  details {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: $spacing-m;
+  }
+
+  details {
+    font-size: 1.25rem;
+    padding-top: $spacing-m;
+    padding-bottom: $spacing-m;
+    border-top: 2px dashed $gray-dark;
+
+    &:last-of-type {
+      border-bottom: 2px dashed $gray-dark;
+    }
+
+    @include mq(lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .actions {
+    text-align: center;
+  }
+}

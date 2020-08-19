@@ -1,33 +1,94 @@
 .nav {
+    display: flex;
+    flex-flow: row wrap;
+
     &__menu {
+        justify-content: space-between;
         display: none;
-        position: absolute;
-        left: 0;
-        right: 0;
         background-color: #fff;
     }
     &__link {
         display: block;
-        padding: 0.5em 1em;
+        margin-top: 0.65rem;
+        margin-bottom: 0.65rem;
     }
     &__toggle {
+        flex: 0 0 10%;
+        margin-top: 3px;
         @include button-reset;
     }
 
-    @include mq-down(lg) {
-        &.is-open &__menu {
-            display: block;
-        }
+    .logo {
+      flex: 0 0 90%;
     }
 
+    .nav__item--active a {
+      @extend a:hover;
+    }
+
+    a:hover.logo,
+    a:focus.logo {
+      border-bottom: 3px solid transparent;
+    }
+
+    @include mq-down(lg) {
+      &.is-open &__menu {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        display: block;
+        font-size: 1.25rem;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        padding-bottom: $spacing-xl;
+        width: 100%;
+        border-bottom: $border;
+
+        &--actions {
+          margin-top: $spacing-l;
+        }
+      }
+
+      &__link:hover,
+      &__link:active {
+          border-bottom: 3px solid transparent;
+      }
+    }
+
+    // @media screen and (min-height: 560px) {
+    //   &.is-open &__menu {
+    //     height: calc(100vh - 200px);
+    //   }
+    // }
+
     @include mq(lg) {
+        width: 100%;
+
+        .logo {
+          flex: 0 0 auto;
+          margin-right: $spacing-m;
+        }
+
+        &__link {
+          margin-right: 1.5em;
+          margin-left: 1.5em;
+        }
+
         &__toggle {
             display: none;
         }
+
         &__menu {
+            margin-top: 0.65em;
             display: flex;
-            position: static;
             background-color: transparent;
+            flex: 1 0 auto;
+
+            &--pages,
+            &--actions {
+              display: flex;
+            }
         }
     }
 }

@@ -1,0 +1,103 @@
+.explanation {
+  margin-top: $spacing-xl;
+
+  @include mq(lg) {
+    margin-top: $spacing-xl*2;
+    margin-bottom: $spacing-xl;
+  }
+
+  h2,
+  p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: $spacing-m;
+  }
+
+  &__image--right,
+  &__image--left {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+
+    h2,
+    h3,
+    p {
+      text-align: left;
+    }
+
+    @include mq-down(md) {
+      img {
+        max-width: 80%;
+        margin-bottom: $spacing-l;
+      }
+    }
+
+    @include mq(md) {
+      display: flex;
+      align-items: center;
+
+      img {
+        max-width: 40%;
+      }
+
+      div {
+        max-width: 50%;
+        margin-right: 5%;
+        margin-left: 5%;
+      }
+    }
+
+    @include mq(lg) {
+      margin-top: $spacing-xl*2;
+      margin-bottom: $spacing-xl*2;
+    }
+  }
+
+  &__image--left {
+    flex-direction: row-reverse;
+  }
+}
+
+.explanation-2 {
+  margin-top: $spacing-xl*2;
+  margin-bottom: $spacing-xl;
+
+  &__inner {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+  }
+
+  &__image--right,
+  &__image--left {
+    display: block;
+    margin-top: $spacing-xl*2;
+    margin-bottom: $spacing-xl*2;
+    text-align: left;
+    max-width: 30%;
+
+    img {
+      margin-bottom: $spacing-l;
+    }
+
+    p {
+      text-align: left !important;
+      margin-top: $spacing-m;
+    }
+  }
+
+  h2,
+  p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px;
+    text-align: center;
+  }
+}

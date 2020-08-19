@@ -1,0 +1,35 @@
+.teaser {
+  margin-top: $spacing-xl;
+  padding-top: $spacing-xl;
+  padding-right: 5%;
+  padding-bottom: $spacing-xl;
+  padding-left: 5%;
+  background-color: $brand-blue-light;
+  border-radius: 10px;
+  text-align: center;
+
+  @include mq(lg) {
+    margin-top: $spacing-xl*2;
+    padding-top: $spacing-xl*2;
+    padding-bottom: $spacing-xl*2;
+  }
+
+  h2,
+  p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: $spacing-m;
+  }
+
+  img {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-l;
+  }
+
+}

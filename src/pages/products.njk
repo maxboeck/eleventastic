@@ -1,0 +1,115 @@
+---
+layout: base
+permalink: /products/
+eleventyNavigation:
+  key: Products
+  order: 1
+---
+
+<div class="container">
+  <div class="intro">
+    <p><strong>Our product is modular. Tackle your daily analysis tasks with our core modules. And make even more out of your data with the power of A.I. extensions.</strong></p>
+    <p>With a cloud-based, modular SaaS setup we accommodate a large variety of team needs and budgets.</p>
+  </div>
+  <div class="hero__horizontal">
+    <img src={{' /assets/images/screenshot-explore-2.png' | url }} width="700" alt="" />
+    <div class="hero__horizontal--inner">
+      <h1>Explore <sup>beta</sup></h1>
+      <p>Link your data sets with Explore. Subscribing to this core module, you search, link and compare your analysis results with one click at unprecedented speed no matter the bio data type. Test your data-driven hypothesis before testing in the lab.</p>
+      <div class="actions">
+        <p>
+          <a href="#learn-more">Learn more</a>{% include "request-demo-button.njk" %}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="features">
+    <h2>We step up to offer one product for all of your data sets.</h2>
+    <p>Independent of organisms (human, mouse, pig, plant, fly, worm, bacteria, fungi, …), we already cover a wide range of data domains, which we call bio data types. If you do not see your specific needs covered, we’d love to <a href="/contact/">hear from you</a>!</p>
+    <ul>
+      <li>GWAS summary statistics</li>
+      <li>differentially regulated genes</li>
+      <li>methylated regions</li>
+      <li>deregulated metabolites</li>
+      <li>mutations</li>
+      <li>phosphorylation sites</li>
+      <li>eQTLs</li>
+      <li>Transcriptoin factor targets</li>
+      <li>deregualted microRNAs</li>
+      <li>many many more</li>
+    </ul>
+  </div>
+  <div class="explanation">
+    <h2>Explore <sup>beta</sup> user flow</h2>
+    <div class="explanation__image--right">
+      <img src={{' /assets/images/insight-gap.png' | url }} width="700" alt=""/>
+      <div>
+        <h3>Step 01</h3>
+        <p>After creating an account, you simply upload your data sets into your protected area of the knowing01 cloud. Your data sets are kept in the original format and are only accessible by you - unless of course you decide to share them with your team members.</p>
+      </div>
+    </div>
+    <div class="explanation__image--left">
+      <img src={{' /assets/images/speed.png' | url }} width="700" alt=""/>
+      <div>
+        <h3>Step 02</h3>
+        <p>Across all data sets available to you - whether its your own, shared by a colleague or from the public domain - you link the data with one mouse-click and start exploring for patterns along your current hypothesis or discover new ones. Or simply find your key marker in all your data.</p>
+      </div>
+    </div>
+    <div class="explanation__image--right">
+      <img src={{' /assets/images/insight-gap.png' | url }} width="700" alt=""/>
+      <div>
+        <h3>Step 03</h3>
+        <p>The results are shown immediately in our web-interface. Stored in your protected area, results can be shared with colleagues or downloaded. Transparency is at our core here: The results include the approach taken to connect your data sets. We also continuously develop to keep up with your needs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion" id="learn-more">
+    <h2>On of many Example use cases</h2>
+    <details>
+      <summary>Differentially regulated genes (DEGs)</summary>
+      <p>You recieved ten different comparisons of combinations after bulk RNAseq measurements and analysis from your NGS measurement facilty. The sets cover different genetic background, time-points at two tumor stages (mid and severe). Now, which genes are exclusively regulated between time points irrespective of tumor stage? What differences between tumor stages are not afftected by time? Are these genes targeted by the major transcription factor previously described to modulate the disease?</p>
+      <p><strong>How Explore can help</strong></p>
+      <p>Use Explore to combine the ten sets in a few clicks according to the relevancy for your questions and get the TF target gene list. Be done in a day and use tomorrow to plan your validation experiments with the unique genes!</p>
+    </details>
+    <details>
+      <summary>Example No 2</summary>
+      <p>You have results from your disease mouse model of lung tissue comparing different airway “depth”? and want to compare your data to the newest GWAS results of human COPD and early stage lung cancer from TCGA?</p>
+      <p><strong>How Explore can help</strong></p>
+      <p>Use Explore to combine your new results,the GWAS summary statistics and the already analyzed TCGA data. See common regulation on mouse-gene/human genomic position/human-gene level. Be done and in a day and use tomorrow to plan you next experiments to validate your mouse gene top hits that are prioritized by having a human genetic component and early cancer signals.</p>
+    </details>
+    <details>
+      <summary>Example No 3</summary>
+      <p>You have results from your disease mouse model of lung tissue comparing different airway “depth”? and want to compare your data to the newest GWAS results of human COPD and early stage lung cancer from TCGA?</p>
+      <p><strong>How Explore can help</strong></p>
+      <p>Use Explore to combine your new results,the GWAS summary statistics and the already analyzed TCGA data. See common regulation on mouse-gene/human genomic position/human-gene level. Be done and in a day and use tomorrow to plan you next experiments to validate your mouse gene top hits that are prioritized by having a human genetic component and early cancer signals.</p>
+    </details>
+    <div class="actions">
+      <p>
+        <a href="#">Get a quote for Explore</a>{% include "request-demo-button.njk" %}
+      </p>
+    </div>
+  </div>
+  <div class="explanation">
+    <h2>Other modules on the roadmap</h2>
+    <div class="explanation__image--right">
+      <img src={{' /assets/images/insight-gap.png' | url }} width="700" alt=""/>
+      <div>
+        <h3>Characterize (coming soon)</h3>
+        <p>Characterize lets you dive into the biological meaning of your data set. Get a instant overview of the knowns, enrichments and unkowns from your list of genes, proteins, variants, mutations, and more.</p>
+        <p>
+          <a href="#">Keep me informed</a>
+        </p>
+      </div>
+    </div>
+    <div class="explanation__image--left">
+      <img src={{' /assets/images/speed.png' | url }} width="700" alt=""/>
+      <div>
+        <h3>A.I. extensions (coming 2021)</h3>
+        <p>A.I. extensions that can be flexibly added on top of the Characterize or Explore modules, harness the power of new technology to supercharge your data driven insight generation. Do you need help understanding enrichment analysis? Do you want to know if your analyses results are special and meaninful? Do you have questions about the quality of your data? Do you want to identify new hypothesis in an unbiased manner? Do you want to learn about co-morbitiies?</p>
+        <p>
+          <a href="/contact/">Tell us your needs!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

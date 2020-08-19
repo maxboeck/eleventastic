@@ -1,0 +1,28 @@
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+label {
+  margin-top: $spacing-s;
+  padding-bottom: $spacing-s;
+}
+
+input,
+textarea {
+  padding: 0.25rem $spacing-s;
+  border: 2px solid $gray-dark;
+  border-radius: 5px;
+}
+
+input[type="button"] {
+  margin-top: $spacing-l;
+  width: auto;
+  float: right;
+  font-size: 1.25rem;
+
+  @extend .cta;
+}

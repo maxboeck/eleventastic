@@ -1,9 +1,19 @@
 .header {
-    padding: $spacing-y 0;
+    padding: $spacing-m 0;
 
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    @include mq(md) {
+      padding-top: $spacing-l;
+      padding-bottom: $spacing-l;
     }
+
+    @include mq(lg) {
+      padding-top: $spacing-xl;
+      padding-bottom: $spacing-xl;
+    }
+
+    // &__inner {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
 }

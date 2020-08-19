@@ -1,0 +1,145 @@
+*,*:after,*:before{box-sizing:border-box;}
+
+/**
+ * Including the at-only style with the dialog CSS as it is required
+ * to visually hide a dialog's heading if desired.
+ */
+.at-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/**
+ * Trigger styling
+ */
+[data-modal-open][hidden] {
+  display: none;
+}
+
+/**
+ * When a modal dialog is open, don't allow scrolling of content
+ * beneath (on desktop). Also useful in negating instances of
+ * double scroll bars.
+ * (browser window + dialog if long enough content)
+ */
+body.modal-open {
+  overflow: hidden;
+}
+
+/**
+ * Modal Dialog base styling
+ */
+.js [data-modal],
+.a11y-modal {
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  bottom: 0;
+  // box-shadow: 0 0 1800px 400px rgba(0,0,0,.8);
+  box-shadow: 0 0 500px 0 rgba(0,0,0,.25);
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 660px;
+  opacity: 1;
+  overflow: auto;
+  padding: $spacing-l;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(0%);
+  visibility: visible;
+  width: 100%;
+  z-index: 10; /* this should be more than enough... */
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: $spacing-m;
+    padding-right: $spacing-l;
+  }
+}
+
+@media screen and ( min-height: 440px ) and ( min-width: 500px ) {
+  .js [data-modal],
+  .a11y-modal {
+    bottom: auto;
+    top: 50%;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+  }
+}
+
+
+/**
+ * To allow for CSS animations, hidden modal dialogs are
+ * not set to display: none, but rather the following rule
+ * set, in combination with the dialog's default
+ * position: fixed, will keep dialogs hidden from
+ * all users until opened.
+ *
+ * This also solves an issue with iOS VO + Safari not allowing
+ * modal dialogs to be focused, if the dialog is initially
+ * set to "display: none".
+ */
+.js [data-modal][hidden],
+.a11y-modal[hidden] {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15vh);
+  visibility: hidden;
+}
+
+.a11y-modal__close-btn {
+  border: none;
+}
+
+.is-icon-btn {
+  background: none;
+  border: none;
+  height: 2em;
+  padding: 0;
+  position: absolute;
+  right: $spacing-l;
+  top: 2.25rem;
+  width: 2em;
+}
+
+.is-icon-btn:hover [data-modal-x],
+.is-icon-btn:focus [data-modal-x] {
+  color: $brand-color-primary-offset;
+  transition: color .1s ease-in;
+  // transform: scale(1.3) rotate(45deg);
+  // transition: transform .2s ease-in-out;
+}
+
+[data-modal-x] {
+  border-right: 2px solid;
+  bottom: 0;
+  display: block;
+  height: 1.5rem;
+  left: 0;
+  margin: auto;
+  pointer-events: none;
+  position: relative;
+  right: 0;
+  top: 0;
+  transform: rotate(45deg);
+  width: 2px;
+}
+
+[data-modal-x]:after {
+  border-right: 2px solid;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(-90deg);
+  width: 100%;
+}
