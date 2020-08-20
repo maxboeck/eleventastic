@@ -19,14 +19,21 @@ textarea {
   border-radius: 5px;
 }
 
-input[type="button"] {
-  margin-top: $spacing-l;
-  width: auto;
-  float: right;
-  font-size: 1.25rem;
-
-  @extend .cta;
+form {
+  button.cta {
+    float: right;
+    font-size: 1.25rem;
+  }
 }
+
+// input[type="button"] {
+//   margin-top: $spacing-l;
+//   width: auto;
+//   float: right;
+//   font-size: 1.25rem;
+//
+//   @extend .cta;
+// }
 
 .form__checkbox {
   display: flex;
