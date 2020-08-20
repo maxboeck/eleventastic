@@ -3,19 +3,20 @@
     <h1>
       Request your free demo
     </h1>
-    <fieldset>
-      <form>
-        <label for="name">Your name
-          <input id="name" type="name" required>
-        </label>
-        <label for="email">Your e-mail address
-          <input id="email" type="email" required>
-        </label>
-        <label>Additional comments
-          <textarea></textarea>
-        </label>
+      <form name="request-demo" method="POST" data-netlify="true">
+        <label for="name">Your name</label>
+        <input id="name" type="text">
+        <label for="email">Your e-mail address (required)</label>
+        <input id="email" type="email" required>
+        <label for="company">Your company/organization</label>
+        <input id="company" type="text">
+        <label>Please feel free to share anything about the challenge you might be interested to solve with the help of knowing<sup>01</sup></label>
+        <textarea></textarea>
+        <div class="form__checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">Consent to be contacted and have information stored and processed (required)</label>
+        </div>
         <input type="button" class="cta" value="Request free demo now">
       </form>
-    </fieldset>
   </div>
 </div>

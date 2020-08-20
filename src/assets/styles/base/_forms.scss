@@ -7,8 +7,9 @@ textarea {
 }
 
 label {
-  margin-top: $spacing-s;
-  padding-bottom: $spacing-s;
+  margin-top: 1.25rem;
+  padding-bottom: $spacing-s/2;
+  line-height: 1.5;
 }
 
 input,
@@ -25,4 +26,14 @@ input[type="button"] {
   font-size: 1.25rem;
 
   @extend .cta;
+}
+
+.form__checkbox {
+  display: flex;
+
+  input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: $spacing-m;
+  }
 }
