@@ -1,0 +1,21 @@
+.text {
+  margin-top: $spacing-m;
+  margin-bottom: $spacing-m;
+
+  p {
+    margin-top: $spacing-m;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    max-width: 900px;
+  }
+
+  @include mq(md) {
+    margin-top: $spacing-l;
+    margin-bottom: $spacing-l;
+  }
+
+  @include mq(lg) {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl;
+  }
+}

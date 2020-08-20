@@ -1,25 +1,22 @@
-.hero {
+.hero__vertical {
   text-align: center;
-  background-image: url('/assets/images/hero-bg.svg');
-  background-position: bottom;
-  background-repeat: no-repeat;
 
   h1 {
-    margin: $spacing-xl auto;
+    margin-top: $spacing-xl;
+    margin-right: auto;
+    margin-left: auto;
     max-width: 900px;
   }
 
   p {
     font-size: 1.25rem;
     line-height: 1.5;
+    margin-top: $spacing-m;
   }
 
   img {
-    background-color: white;
     margin-top: $spacing-xl;
     margin-bottom: $spacing-xl;
-    border: $border;
-    border-radius: 10px;
   }
 }
 
@@ -39,13 +36,13 @@
   @include mq-down(md) {
     img {
       margin-bottom: $spacing-l;
-      // max-width: 60%;
     }
   }
 
   @include mq(md) {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     flex-direction: row-reverse;
     margin-top: $spacing-l;
     margin-bottom: $spacing-l;

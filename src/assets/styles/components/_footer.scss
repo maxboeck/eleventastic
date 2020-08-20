@@ -1,47 +1,48 @@
 .footer {
     margin-top: $spacing-xl;
-    margin-bottom: $spacing-l;
 
     @include mq(md) {
       margin-top: $spacing-xl*2;
     }
 
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: $spacing-xl;
+        padding-bottom: $spacing-xl;
+        border-top: $border;
+
+        @include mq(md) {
+          flex-direction: column;
+          justify-content: center;
+        }
+    }
+
     nav {
+      .nav__menu--pages {
+
+        @include mq(md) {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+        }
+      }
+
       .nav__item--active a {
         @extend a:hover;
       }
     }
 
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: $spacing-xl;
-        background-image: url('/assets/images/bot-parts.svg');
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        background-size: 280px;
-
-        @include mq-down(md) {
-          min-height: 250px;
-        }
-
-        @include mq(md) {
-          min-height: 200px;
-          background-size: 400px;
-        }
-
-        @include mq-down(lg) {
-          padding-left: $spacing-m;
-        }
-    }
-
-    .contact__social {
-      display: flex;
+    .nav__menu--social {
       margin-top: 0.5rem;
 
+      @include mq(md) {
+        display: flex;
+      }
+
       li {
-        margin-right: $spacing-m;
-        margin-left: $spacing-m;
+        margin: $spacing-m;
       }
 
       a svg {
@@ -61,3 +62,68 @@
       }
     }
 }
+
+
+// .footer {
+//     margin-top: $spacing-xl;
+//     margin-bottom: $spacing-l;
+//
+//     @include mq(md) {
+//       margin-top: $spacing-xl*2;
+//     }
+//
+//     nav {
+//       .nav__item--active a {
+//         @extend a:hover;
+//       }
+//     }
+//
+//     &__inner {
+//         display: flex;
+//         justify-content: space-between;
+//         padding-bottom: $spacing-xl;
+//         background-image: url('/assets/images/bot-parts.svg');
+//         background-repeat: no-repeat;
+//         background-position: bottom center;
+//         background-size: 280px;
+//
+//         @include mq-down(md) {
+//           min-height: 250px;
+//         }
+//
+//         @include mq(md) {
+//           min-height: 200px;
+//           background-size: 400px;
+//         }
+//
+//         @include mq-down(lg) {
+//           padding-left: $spacing-m;
+//         }
+//     }
+//
+//     .contact__social {
+//       display: flex;
+//       margin-top: 0.5rem;
+//
+//       li {
+//         margin-right: $spacing-m;
+//         margin-left: $spacing-m;
+//       }
+//
+//       a svg {
+//         height: $spacing-l;
+//         width: $spacing-l;
+//         vertical-align: text-bottom;
+//         fill: $gray-dark;
+//         transition: fill .1s ease-in;
+//
+//         &:hover {
+//           fill: $brand-color-primary-offset;
+//         }
+//       }
+//
+//       a {
+//         border-bottom: none;
+//       }
+//     }
+// }

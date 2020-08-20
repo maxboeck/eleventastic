@@ -1,11 +1,9 @@
-<!-- Modal request demo -->
 {% include "request-demo-modal.njk" %}
-<!-- Modal request demo -->
-<footer class="footer" role="contentinfo">
+<footer class="footer" id="footer" role="contentinfo">
     <div class="footer__inner container">
         <nav>
           <ul class="nav__menu--pages">
-            {%- for item in collections.sub | eleventyNavigation -%}
+            {%- for item in collections.all | eleventyNavigation -%}
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
                 <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
@@ -16,7 +14,7 @@
             {%- endfor -%}
           </ul>
         </nav>
-        <ul class="contact__social">
+        <ul class="nav__menu--social">
           <li>
             <a href="https://github.com/knowinghealth" aria-label="knowing01 repositories on GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" enable-background="new 0 0 20 20">

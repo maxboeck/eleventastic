@@ -39,7 +39,6 @@ body.modal-open {
   -webkit-overflow-scrolling: touch;
   background: #fff;
   bottom: 0;
-  // box-shadow: 0 0 1800px 400px rgba(0,0,0,.8);
   box-shadow: 0 0 500px 0 rgba(0,0,0,.25);
   left: 0;
   margin: auto;
@@ -47,7 +46,8 @@ body.modal-open {
   max-width: 660px;
   opacity: 1;
   overflow: auto;
-  padding: $spacing-l;
+  padding-top: $spacing-l;
+  padding-bottom: $spacing-l;
   position: fixed;
   right: 0;
   top: 0;
@@ -63,7 +63,7 @@ body.modal-open {
   }
 }
 
-@media screen and ( min-height: 440px ) and ( min-width: 500px ) {
+@media screen and ( min-height: 440px ) and ( min-width: 661px ) {
   .js [data-modal],
   .a11y-modal {
     bottom: auto;
@@ -105,7 +105,7 @@ body.modal-open {
   height: 2em;
   padding: 0;
   position: absolute;
-  right: $spacing-l;
+  right: 5%;
   top: 2.25rem;
   width: 2em;
 }
@@ -114,8 +114,6 @@ body.modal-open {
 .is-icon-btn:focus [data-modal-x] {
   color: $brand-color-primary-offset;
   transition: color .1s ease-in;
-  // transform: scale(1.3) rotate(45deg);
-  // transition: transform .2s ease-in-out;
 }
 
 [data-modal-x] {

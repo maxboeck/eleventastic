@@ -8,9 +8,11 @@
         background-color: #fff;
     }
     &__link {
-        display: block;
+        display: inline-block;
         margin-top: 0.65rem;
         margin-bottom: 0.65rem;
+        margin-right: 1.5em;
+        margin-left: 1.5em;
     }
     &__toggle {
         flex: 0 0 10%;
@@ -46,7 +48,7 @@
         border-bottom: $border;
 
         &--actions {
-          margin-top: $spacing-l;
+          margin-top: $spacing-m;
         }
       }
 
@@ -71,8 +73,7 @@
         }
 
         &__link {
-          margin-right: 1.5em;
-          margin-left: 1.5em;
+
         }
 
         &__toggle {
@@ -88,6 +89,7 @@
             &--pages,
             &--actions {
               display: flex;
+              align-items: baseline;
             }
         }
     }
