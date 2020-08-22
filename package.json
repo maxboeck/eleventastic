@@ -2,6 +2,9 @@
   "name": "eleventastic",
   "version": "1.0.0",
   "description": "A boilerplate for eleventy websites",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "start": "npm run dev",
     "dev": "run-s clean eleventy:dev --print-label",
