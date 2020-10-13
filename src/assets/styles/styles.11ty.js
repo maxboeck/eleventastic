@@ -1,4 +1,3 @@
-const fs = require('fs')
 const path = require('path')
 const sass = require('node-sass')
 const CleanCSS = require('clean-css')
@@ -108,7 +107,7 @@ module.exports = class {
                 // throw and abort in production
                 throw new Error(err)
             } else {
-                // otherwise display the error overly
+                // otherwise display the error overlay
                 console.error(err)
                 const msg = err.formatted || err.message
                 return this.renderError(msg)
