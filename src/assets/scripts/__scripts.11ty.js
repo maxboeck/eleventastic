@@ -1,13 +1,15 @@
+// This file handles the JS build.
+// It will run webpack with babel over all JS defined in the main entry file.
+
+// main entry point name
+const ENTRY_FILE_NAME = 'main.js'
+
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const MemoryFileSystem = require('memory-fs')
-
 const isProd = process.env.ELEVENTY_ENV === 'production'
 const mfs = new MemoryFileSystem()
-
-// main entry point name
-const ENTRY_FILE_NAME = 'main.js'
 
 module.exports = class {
     // Configure Webpack in Here

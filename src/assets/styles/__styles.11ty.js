@@ -1,12 +1,14 @@
+// This file handles the CSS build.
+// It will run Sass and compile all styles defined in the main entry file.
+
+// main entry point name
+const ENTRY_FILE_NAME = 'main.scss'
+
 const path = require('path')
 const sass = require('node-sass')
 const CleanCSS = require('clean-css')
 const cssesc = require('cssesc')
-
 const isProd = process.env.ELEVENTY_ENV === 'production'
-
-// main entry point name
-const ENTRY_FILE_NAME = 'main.scss'
 
 module.exports = class {
     async data() {
