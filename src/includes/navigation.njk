@@ -18,17 +18,19 @@
     {# Nav Links  #}
     <ul class="nav__menu js-nav-menu" id="nav-menu">
     {%- for item in collections.all | eleventyNavigation -%}
-        {%- set isCurrent = (item.url == page.url) -%}
-        {%- set isParent = item.url != '/' and item.url in page.url -%}
-        <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
-            <a
-                class="nav__link"
-                href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
-                {% if isCurrent %}aria-current="page"{% endif %}
-            >
-                {{ item.title }}
-            </a>
-        </li>
+        {%- if item.url -%}
+            {%- set isCurrent = (item.url == page.url) -%}
+            {%- set isParent = item.url != '/' and item.url in page.url -%}
+            <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+                <a
+                    class="nav__link"
+                    href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
+                    {% if isCurrent %}aria-current="page"{% endif %}
+                >
+                    {{ item.title }}
+                </a>
+            </li>
+        {%- endif -%}
     {%- endfor -%}
     </ul>
 
