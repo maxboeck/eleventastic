@@ -1,6 +1,7 @@
 const htmlmin = require('html-minifier')
 const critical = require('critical')
 const buildDir = 'dist'
+const {JSDOM} = require('jsdom')
 
 const shouldTransformHTML = (outputPath) =>
     outputPath &&
@@ -11,6 +12,32 @@ const isHomePage = (outputPath) => outputPath === `${buildDir}/index.html`
 
 process.setMaxListeners(Infinity)
 module.exports = {
+
+    appender: function (html, outputPath) {
+        if(!outputPath || !outputPath.endsWith('.html'))
+            return html
+        const dom = new JSDOM(html);
+        const document = dom.window.document;
+        const appendTemplates = document.querySelectorAll('[data-append]');
+        appendTemplates.forEach((element) => {
+            const selector = element.getAttribute('data-append');
+
+            switch (selector){
+                case 'style':
+                    const styleElem = document.createElement('style')
+                    styleElem.innerHTML = element.innerHTML
+                    document.head.appendChild(styleElem)
+                    break
+                default:
+                    document.querySelector(selector).innerHTML += element.innerHTML;
+            }
+
+            element.parentNode.removeChild(element);
+        });
+    
+        return dom.serialize()
+    },
+
     htmlmin: function (content, outputPath) {
         if (shouldTransformHTML(outputPath)) {
             return htmlmin.minify(content, {

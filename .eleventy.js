@@ -6,6 +6,7 @@ const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
+const pairedShortcodes = require('./utils/shortcodes-paired.js')
 
 module.exports = function (config) {
     // Plugins
@@ -25,6 +26,11 @@ module.exports = function (config) {
     // Shortcodes
     Object.keys(shortcodes).forEach((shortcodeName) => {
         config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+    })
+    
+    // Paired Shortcodes
+    Object.keys(pairedShortcodes).forEach((shortcodeName) => {
+        config.addPairedShortcode(shortcodeName, pairedShortcodes[shortcodeName])
     })
 
     // Icon Sprite
