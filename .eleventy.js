@@ -1,16 +1,39 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
+const pluginSvgSprite = require("eleventy-plugin-svg-sprite");
 const markdownIt = require('markdown-it')
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
-const iconsprite = require('./utils/iconsprite.js')
 
 module.exports = function (config) {
     // Plugins
     config.addPlugin(pluginRss)
     config.addPlugin(pluginNavigation)
+    config.addPlugin(pluginSvgSprite, {
+        path: "./src/assets/icons",
+        svgSpriteShortcode: "iconsprite",
+        spriteConfig: {
+            mode: {
+                inline: true,
+                symbol: {
+                    sprite: 'sprite.svg',
+                    example: false
+                }
+            },
+            shape: {
+                transform: ['svgo'],
+                id: {
+                    generator: 'icon-%s'
+                }
+            },
+            svg: {
+                xmlDeclaration: false,
+                doctypeDeclaration: false
+            }
+        }
+    })
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
@@ -26,9 +49,6 @@ module.exports = function (config) {
     Object.keys(shortcodes).forEach((shortcodeName) => {
         config.addShortcode(shortcodeName, shortcodes[shortcodeName])
     })
-
-    // Icon Sprite
-    config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
