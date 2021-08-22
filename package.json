@@ -33,7 +33,7 @@
     "critical": "^3.0.0",
     "cssesc": "^3.0.0",
     "del-cli": "^3.0.1",
-    "eleventy-plugin-svg-sprite": "^1.2.0",
+    "eleventy-plugin-svg-sprite": "^1.2.1",
     "focus-trap": "^6.3.0",
     "focus-visible": "^5.2.0",
     "html-minifier": "^4.0.0",

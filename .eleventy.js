@@ -13,26 +13,7 @@ module.exports = function (config) {
     config.addPlugin(pluginNavigation)
     config.addPlugin(pluginSvgSprite, {
         path: "./src/assets/icons",
-        svgSpriteShortcode: "iconsprite",
-        spriteConfig: {
-            mode: {
-                inline: true,
-                symbol: {
-                    sprite: 'sprite.svg',
-                    example: false
-                }
-            },
-            shape: {
-                transform: ['svgo'],
-                id: {
-                    generator: 'icon-%s'
-                }
-            },
-            svg: {
-                xmlDeclaration: false,
-                doctypeDeclaration: false
-            }
-        }
+        svgSpriteShortcode: "iconsprite"
     })
 
     // Filters
