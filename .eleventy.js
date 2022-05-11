@@ -28,7 +28,7 @@ module.exports = function (config) {
 
     // Shortcodes
     Object.keys(shortcodes).forEach((shortcodeName) => {
-        config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+        config.addAsyncShortcode(shortcodeName, shortcodes[shortcodeName])
     })
 
     // Asset Watch Targets
@@ -52,7 +52,7 @@ module.exports = function (config) {
     // Pass-through files
     config.addPassthroughCopy('src/robots.txt')
     config.addPassthroughCopy('src/site.webmanifest')
-    config.addPassthroughCopy('src/assets/images')
+    config.addPassthroughCopy('src/assets/images/favicon')
     config.addPassthroughCopy('src/assets/fonts')
 
     // Deep-Merge
