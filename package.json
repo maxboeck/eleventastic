@@ -30,7 +30,7 @@
     "@babel/preset-env": "^7.13.12",
     "babel-loader": "^8.2.2",
     "clean-css": "^5.1.2",
-    "critical": "^3.0.0",
+    "critical": "^5.0.4",
     "cssesc": "^3.0.0",
     "del-cli": "^3.0.1",
     "eleventy-plugin-svg-sprite": "^1.2.1",
